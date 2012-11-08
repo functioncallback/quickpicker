@@ -1,0 +1,116 @@
+.quickpicker:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.quickpicker .qck-display {
+  border: 2px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 2px;
+  padding: 5px 7px 3px 5px;
+}
+
+.quickpicker:hover .qck-display {
+  background: #eee;
+}
+
+.quickpicker .qck-picker {
+  background: #eee;
+  border: 2px solid #333;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px #ccc;
+  cursor: default;
+  padding: 5px 30px;
+  position: absolute;
+  width: 585px;
+  height: 190px;
+}
+
+.quickpicker .qck-header {
+  color: #333;
+  font-size: 25px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.quickpicker .qck-selection {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.quickpicker .qck-unit {
+  color: #333;
+  float: left;
+  margin: 0 10px;
+}
+
+.quickpicker .qck-title,
+.quickpicker .qck-body {
+  width: 175px;
+}
+
+.quickpicker .qck-title {
+  background: #333;
+  border-radius: 3px;
+  color: #eee;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  height: 15px;
+  padding: 2px 0;
+}
+
+.quickpicker .qck-body div {
+  float: left;
+  text-align: right;
+  font-size: 10px;
+  padding: 4px 6px 6px 4px;
+  width: 15px;
+  height: 10px;
+}
+
+.quickpicker .qck-day:hover {
+  cursor: pointer;
+}
+
+.quickpicker .qck-day.qck-selected {
+  background: #ccc;
+  font-weight: bold;
+}
+
+.quickpicker.qck-selecting .qck-day.qck-selected,
+.quickpicker .qck-day:hover {
+  background: #aaa;
+}
+
+.quickpicker .qck-navigate {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  position: absolute;
+  cursor: pointer;
+  top: 75px;
+}
+
+.quickpicker .qck-navigate.qck-back {
+  border-right: 30px solid #ccc;
+  left: 5px;
+}
+
+.quickpicker .qck-navigate.qck-forward {
+  border-left: 30px solid #ccc;
+  right: 5px;
+}
+
+.quickpicker .qck-navigate.qck-back:hover {
+  border-right: 30px solid #aaa;
+}
+
+.quickpicker .qck-navigate.qck-forward:hover {
+  border-left: 30px solid #aaa;
+}
