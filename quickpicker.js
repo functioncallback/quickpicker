@@ -4,10 +4,11 @@
       weekDayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   $.fn.quickpicker = function(options) {
+    var now = new Date();
 
     var settings = $.extend({
-      start: new Date,
-      end: new Date,
+      start: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0),
+      end: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59),
       hideOnPick: true,
       visibleOnLoad: false
     }, options);
@@ -19,7 +20,11 @@
         container = this.append(display).append(picker);
 
     if (!container.hasClass('quickpicker')) container.addClass('quickpicker');
-    for (var i=0; i<3; i++) units.append(createUnit(d8(settings.start).add(i, 'Month')));
+
+    for (var i=0; i<3; i++) {
+      var baseDate = new Date(settings.start.getFullYear(), settings.start.getMonth(), 1);
+      units.append(createUnit(d8(baseDate).add(i, 'Month')));
+    }
 
     selectRange(settings.start, settings.end);
     picker.append(pagination());
